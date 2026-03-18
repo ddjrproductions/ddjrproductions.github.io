@@ -27,13 +27,13 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .nav-links a { font-size: 0.76rem; font-weight: 400; color: #86868b; transition: color 0.2s; }
 .nav-links a:hover { color: #1d1d1f; }
 .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-.nav-hamburger span { display: block; width: 18px; height: 1px; background: #1d1d1f; margin: 5px 0; }
+.nav-hamburger span { display: block; width: 18px; height: 1px; background: #1d1d1f; margin: 5px 0; transition: all 0.3s; }
 
 /* HERO */
 .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 140px 32px 100px; position: relative; }
 .hero::after { content: ''; position: absolute; bottom: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, #d2d2d7, transparent); }
 .hero-inner { max-width: 760px; }
-.hero-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #86868b; margin-bottom: 32px; }
+.hero-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #86868b; margin-bottom: 32px; display: inline-block; padding: 8px 20px; border: 1px solid #e5e5e5; border-radius: 980px; }
 .hero h1 { font-family: 'EB Garamond', Georgia, serif; font-size: clamp(2.6rem, 5.5vw, 4rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; color: #1d1d1f; margin-bottom: 28px; }
 .hero h1 em { font-style: italic; }
 .hero-intro { font-size: 0.95rem; font-weight: 300; color: #6e6e73; line-height: 1.8; max-width: 580px; margin: 0 auto 44px; }
@@ -45,11 +45,11 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .btn-light:hover { border-color: #1d1d1f; }
 
 /* STATS */
-.stats { padding: 72px 32px; background: #fafafa; border-bottom: 1px solid #f0f0f0; }
+.stats { padding: 72px 32px; background: #f5f5f7; border-top: 1px solid #ececec; border-bottom: 1px solid #ececec; }
 .stats-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
-.stat-val { font-family: 'EB Garamond', Georgia, serif; font-size: 2rem; font-weight: 700; color: #1d1d1f; letter-spacing: -0.02em; }
-.stat-desc { font-size: 0.68rem; font-weight: 500; color: #86868b; margin-top: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
-.stat-divider { width: 1px; background: #e5e5e5; margin: 0 auto; height: 40px; align-self: center; }
+.stat-item { padding: 8px 0; }
+.stat-val { font-family: 'EB Garamond', Georgia, serif; font-size: 2.2rem; font-weight: 700; color: #1d1d1f; letter-spacing: -0.02em; margin-bottom: 6px; }
+.stat-desc { font-size: 0.68rem; font-weight: 500; color: #86868b; letter-spacing: 0.5px; text-transform: uppercase; }
 
 /* SECTIONS */
 section { padding: 120px 32px; }
@@ -64,55 +64,52 @@ section { padding: 120px 32px; }
 .about::after { content: ''; position: absolute; bottom: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, #e5e5e5, transparent); }
 .about-content { max-width: 640px; margin: 0 auto; text-align: center; }
 .about-content p { font-size: 0.95rem; font-weight: 300; color: #6e6e73; line-height: 1.9; margin-bottom: 20px; }
-.about-content p:last-child { margin-bottom: 0; }
 
 /* FOUNDER */
-.founder { background: #fafafa; }
+.founder { background: #f5f5f7; }
 .founder-layout { display: grid; grid-template-columns: 420px 1fr; gap: 72px; align-items: center; }
-.founder-photo { aspect-ratio: 3/4; background: #e8e8ed; border-radius: 24px; overflow: hidden; position: relative; }
+.founder-photo { aspect-ratio: 3/4; background: linear-gradient(145deg, #ddd, #e8e8ed); border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
 .founder-photo img { width: 100%; height: 100%; object-fit: cover; }
 .founder-photo-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; color: #aaa; }
 .founder-text .label { margin-bottom: 8px; }
 .founder-text h3 { font-family: 'EB Garamond', Georgia, serif; font-size: 2rem; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 24px; line-height: 1.2; }
 .founder-text p { font-size: 0.9rem; font-weight: 300; color: #6e6e73; line-height: 1.9; margin-bottom: 18px; }
-.founder-links { display: flex; gap: 10px; margin-top: 28px; }
+.founder-links { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
 
 /* SERVICES */
 .services { background: #fff; position: relative; }
 .services::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, #e5e5e5, transparent); }
 .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-.service-card { padding: 44px 36px; border-radius: 20px; background: #fafafa; border: 1px solid transparent; transition: all 0.3s; }
-.service-card:hover { background: #f5f5f7; border-color: #e5e5e5; transform: translateY(-2px); }
+.service-card { padding: 44px 36px; border-radius: 20px; background: #f5f5f7; border: 1px solid transparent; transition: all 0.3s; }
+.service-card:hover { background: #f0f0f2; border-color: #e5e5e5; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
 .service-num { font-family: 'EB Garamond', Georgia, serif; font-size: 1.6rem; font-weight: 500; color: #d2d2d7; margin-bottom: 16px; }
 .service-card h3 { font-size: 0.95rem; font-weight: 600; color: #1d1d1f; margin-bottom: 10px; }
 .service-card p { font-size: 0.85rem; font-weight: 300; color: #86868b; line-height: 1.75; }
 
 /* HIGHLIGHTS */
 .highlights { background: #1d1d1f; color: #fff; }
-.highlights .label { color: #86868b; }
+.highlights .label { color: #666; }
 .highlights .section-head h2 { color: #fff; }
 .hl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .hl-card { padding: 32px 28px; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); transition: all 0.3s; }
-.hl-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.1); }
+.hl-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); transform: translateY(-2px); }
 .hl-card h3 { font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 6px; }
 .hl-card p { font-size: 0.78rem; font-weight: 300; color: rgba(255,255,255,0.45); line-height: 1.65; }
 
 /* BOOK */
 .book { background: #fff; }
 .book-layout { display: grid; grid-template-columns: 300px 1fr; gap: 64px; align-items: center; }
-.book-cover { aspect-ratio: 3/4; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.06); position: relative; }
+.book-cover { aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06); }
 .book-cover img { width: 100%; height: 100%; object-fit: cover; }
-.book-cover-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #e8e8ed; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; color: #aaa; }
 .book-badge { display: inline-block; font-size: 0.6rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; background: #1d1d1f; padding: 5px 14px; border-radius: 4px; margin-bottom: 18px; }
 .book-text h3 { font-family: 'EB Garamond', Georgia, serif; font-size: 1.8rem; font-weight: 500; margin-bottom: 6px; }
-.book-text .book-sub { font-family: 'EB Garamond', Georgia, serif; font-size: 1rem; font-style: italic; color: #86868b; margin-bottom: 20px; }
+.book-sub { font-family: 'EB Garamond', Georgia, serif; font-size: 1rem; font-style: italic; color: #86868b; margin-bottom: 20px; }
 .book-text p { font-size: 0.9rem; font-weight: 300; color: #6e6e73; line-height: 1.85; margin-bottom: 16px; }
 .book-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
 
 /* COMING SOON */
-.coming-soon { background: #fafafa; text-align: center; position: relative; }
-.coming-soon::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, #e5e5e5, transparent); }
-.cs-box { max-width: 520px; margin: 0 auto; padding: 64px 48px; background: #fff; border-radius: 28px; border: 1px solid #e5e5e5; }
+.coming-soon { background: #f5f5f7; text-align: center; position: relative; }
+.cs-box { max-width: 520px; margin: 0 auto; padding: 64px 48px; background: #fff; border-radius: 28px; border: 1px solid #e5e5e5; box-shadow: 0 8px 32px rgba(0,0,0,0.03); }
 .cs-box h3 { font-family: 'EB Garamond', Georgia, serif; font-size: 1.4rem; font-weight: 500; font-style: italic; margin-bottom: 16px; }
 .cs-box p { font-size: 0.9rem; font-weight: 300; color: #86868b; line-height: 1.75; }
 .cs-tag { display: inline-block; font-size: 0.58rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #86868b; margin-top: 28px; padding: 8px 20px; border: 1px solid #d2d2d7; border-radius: 980px; }
@@ -121,7 +118,7 @@ section { padding: 120px 32px; }
 .socials { background: #fff; text-align: center; }
 .social-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
 .social-pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border: 1px solid #e5e5e5; border-radius: 980px; font-size: 0.78rem; font-weight: 500; color: #1d1d1f; transition: all 0.25s; }
-.social-pill:hover { background: #fafafa; border-color: #1d1d1f; transform: translateY(-1px); }
+.social-pill:hover { background: #f5f5f7; border-color: #1d1d1f; transform: translateY(-1px); }
 .social-pill .ct { color: #86868b; font-weight: 400; font-size: 0.72rem; }
 
 /* CONTACT */
@@ -145,7 +142,6 @@ footer p { font-size: 0.65rem; color: #333; }
   .nav-hamburger { display: block; }
   nav.open .nav-links { display: flex; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); padding: 20px 32px; gap: 16px; border-bottom: 1px solid rgba(0,0,0,0.04); }
   .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 36px 16px; }
-  .stat-divider { display: none; }
   .service-grid { grid-template-columns: 1fr; }
   .hl-grid { grid-template-columns: 1fr; }
   .book-layout { grid-template-columns: 1fr; gap: 40px; }
@@ -155,12 +151,15 @@ footer p { font-size: 0.65rem; color: #333; }
   .cs-box { padding: 48px 28px; }
 }
 
-/* FADE */
-.fade { opacity: 0; transform: translateY(16px); transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1); }
-.fade.visible { opacity: 1; transform: translateY(0); }
-.fade-delay-1 { transition-delay: 0.1s; }
-.fade-delay-2 { transition-delay: 0.2s; }
-.fade-delay-3 { transition-delay: 0.3s; }
+/* REVEAL ANIMATION - starts visible, enhances on scroll */
+.reveal { opacity: 1; transform: translateY(0); transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); }
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(24px); }
+  .reveal.shown { opacity: 1; transform: translateY(0); }
+}
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
 </style>
 </head>
 <body>
@@ -198,19 +197,19 @@ footer p { font-size: 0.65rem; color: #333; }
 <!-- STATS -->
 <div class="stats">
   <div class="stats-inner">
-    <div class="fade">
+    <div class="stat-item reveal">
       <div class="stat-val">4M+</div>
       <div class="stat-desc">Community Across Platforms</div>
     </div>
-    <div class="fade fade-delay-1">
+    <div class="stat-item reveal reveal-d1">
       <div class="stat-val">Webby</div>
       <div class="stat-desc">Award-Winning Creator</div>
     </div>
-    <div class="fade fade-delay-2">
+    <div class="stat-item reveal reveal-d2">
       <div class="stat-val">#1</div>
       <div class="stat-desc">Bestselling Children's Author</div>
     </div>
-    <div class="fade fade-delay-3">
+    <div class="stat-item reveal reveal-d3">
       <div class="stat-val serif" style="font-style:italic;">Multi-Hyphenate</div>
       <div class="stat-desc">Creator, Speaker, Storyteller</div>
     </div>
@@ -220,11 +219,11 @@ footer p { font-size: 0.65rem; color: #333; }
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="section-inner">
-    <div class="section-head fade">
+    <div class="section-head reveal">
       <div class="label">About</div>
       <h2>A creative brand built on heart, humor,<br>and human connection.</h2>
     </div>
-    <div class="about-content fade">
+    <div class="about-content reveal">
       <p>DDJR Productions LLC develops content, campaigns, and experiences that live at the intersection of wildlife, wellness, lifestyle, culture, and storytelling. The brand is anchored by Derrick's unique voice, signature humor, and ability to turn small moments into unforgettable narratives.</p>
       <p>Whether partnering with global brands, speaking to the next generation of creatives, or expanding original intellectual property, DDJR Productions focuses on one core idea: connection that feels real.</p>
     </div>
@@ -235,10 +234,10 @@ footer p { font-size: 0.65rem; color: #333; }
 <section class="founder" id="founder">
   <div class="section-inner">
     <div class="founder-layout">
-      <div class="founder-photo fade">
-        <span class="founder-photo-placeholder">Photo of Derrick</span>
+      <div class="founder-photo reveal">
+        <img src="derrick.jpg" alt="Derrick Downey Jr — Founder of DDJR Productions">
       </div>
-      <div class="founder-text fade fade-delay-1">
+      <div class="founder-text reveal reveal-d1">
         <div class="label">Founder</div>
         <h3>Derrick Downey Jr.</h3>
         <p>Derrick Downey Jr. is a Webby Award-winning creator, storyteller, and entrepreneur best known for building a global community through his heartfelt and humorous wildlife content. With an audience of over 4 million across platforms, he has become a recognizable voice in digital storytelling, blending lifestyle, culture, and emotional connection into his work.</p>
@@ -257,28 +256,28 @@ footer p { font-size: 0.65rem; color: #333; }
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="section-inner">
-    <div class="section-head fade">
+    <div class="section-head reveal">
       <div class="label">What We Do</div>
       <h2>Creative Pillars</h2>
       <p>Every project is designed to entertain, connect, and leave a lasting emotional impression.</p>
     </div>
     <div class="service-grid">
-      <div class="service-card fade">
+      <div class="service-card reveal">
         <div class="service-num">01</div>
         <h3>Wildlife & Wellness Storytelling</h3>
         <p>Heartfelt, entertaining storytelling rooted in compassion, healing, and the unexpected joy found in everyday moments with wildlife.</p>
       </div>
-      <div class="service-card fade fade-delay-1">
+      <div class="service-card reveal reveal-d1">
         <div class="service-num">02</div>
         <h3>Brand Partnerships</h3>
         <p>Strategic campaigns that blend lifestyle, humor, and cinematic content across social platforms for brands that want memorable impact.</p>
       </div>
-      <div class="service-card fade fade-delay-2">
+      <div class="service-card reveal reveal-d2">
         <div class="service-num">03</div>
         <h3>Speaking & Media</h3>
         <p>Live talks, panels, interviews, and media appearances centered on creativity, resilience, storytelling, and building community online.</p>
       </div>
-      <div class="service-card fade fade-delay-3">
+      <div class="service-card reveal reveal-d3">
         <div class="service-num">04</div>
         <h3>Original IP & Creative Ventures</h3>
         <p>From children's books to digital series, products, and screen ideas — developing stories that connect across audiences and platforms.</p>
@@ -290,17 +289,17 @@ footer p { font-size: 0.65rem; color: #333; }
 <!-- HIGHLIGHTS -->
 <section class="highlights" id="highlights">
   <div class="section-inner">
-    <div class="section-head fade">
+    <div class="section-head reveal">
       <div class="label">Recognition</div>
       <h2 style="color:#fff;">Highlights</h2>
     </div>
     <div class="hl-grid">
-      <div class="hl-card fade"><h3>Webby Award — Best Short Form Video</h3><p>People's Voice winner for short-form video excellence.</p></div>
-      <div class="hl-card fade fade-delay-1"><h3>Webby Award — Most Viral</h3><p>Honored for content that captured the internet at scale.</p></div>
-      <div class="hl-card fade fade-delay-2"><h3>Featured by Oprah Winfrey</h3><p>Oprah shared Derrick's work to a global audience in 2019.</p></div>
-      <div class="hl-card fade"><h3>USC Speaker</h3><p>Invited to USC's School of Dramatic Arts on virality and new media.</p></div>
-      <div class="hl-card fade fade-delay-1"><h3>Million Dollar Debunk</h3><p>Feature film appearance, from digital to the screen.</p></div>
-      <div class="hl-card fade fade-delay-2"><h3>#1 Amazon Bestseller</h3><p>Hand and Paw reached the top of Amazon, inspiring families worldwide.</p></div>
+      <div class="hl-card reveal"><h3>Webby Award — Best Short Form Video</h3><p>People's Voice winner for short-form video excellence.</p></div>
+      <div class="hl-card reveal reveal-d1"><h3>Webby Award — Most Viral</h3><p>Honored for content that captured the internet at scale.</p></div>
+      <div class="hl-card reveal reveal-d2"><h3>Global Brand Partnerships</h3><p>Collaborated with leading brands on campaigns blending lifestyle, humor, and storytelling.</p></div>
+      <div class="hl-card reveal"><h3>USC Speaker</h3><p>Invited to USC's School of Dramatic Arts on virality and new media.</p></div>
+      <div class="hl-card reveal reveal-d1"><h3>#1 Amazon Bestseller</h3><p>Hand and Paw reached the top of Amazon, inspiring families worldwide.</p></div>
+      <div class="hl-card reveal reveal-d2"><h3>4M+ Community</h3><p>Built an engaged audience across Instagram, TikTok, YouTube, and Facebook.</p></div>
     </div>
   </div>
 </section>
@@ -308,11 +307,11 @@ footer p { font-size: 0.65rem; color: #333; }
 <!-- BOOK -->
 <section class="book" id="book">
   <div class="section-inner">
-    <div class="section-head fade">
+    <div class="section-head reveal">
       <div class="label">Publishing</div>
       <h2>Hand and Paw</h2>
     </div>
-    <div class="book-layout fade">
+    <div class="book-layout reveal">
       <div class="book-cover">
         <img src="book-cover.png" alt="Hand and Paw — Maxine's Tale of Compassion by Derrick Downey Jr">
       </div>
@@ -335,11 +334,11 @@ footer p { font-size: 0.65rem; color: #333; }
 <!-- COMING SOON -->
 <section class="coming-soon" id="new-project">
   <div class="section-inner">
-    <div class="section-head fade">
+    <div class="section-head reveal">
       <div class="label">New Venture</div>
       <h2>Something New</h2>
     </div>
-    <div class="cs-box fade">
+    <div class="cs-box reveal">
       <h3>Built for creators, by a creator.</h3>
       <p>We're building something we wish existed — a tool born from real shoots, real deadlines, and real frustration with the way things currently work.</p>
       <p style="margin-top:14px;">Details soon.</p>
@@ -351,11 +350,11 @@ footer p { font-size: 0.65rem; color: #333; }
 <!-- SOCIALS -->
 <section class="socials">
   <div class="section-inner">
-    <div class="section-head fade">
+    <div class="section-head reveal">
       <div class="label">Connect</div>
       <h2>Follow Along</h2>
     </div>
-    <div class="social-row fade">
+    <div class="social-row reveal">
       <a href="https://instagram.com/derrickdowneyjr" target="_blank" class="social-pill">Instagram <span class="ct">2M+</span></a>
       <a href="https://tiktok.com/@derrickdowneyjr" target="_blank" class="social-pill">TikTok <span class="ct">1.4M+</span></a>
       <a href="https://youtube.com/@derrickdowneyjr" target="_blank" class="social-pill">YouTube</a>
@@ -386,9 +385,23 @@ footer p { font-size: 0.65rem; color: #333; }
 </footer>
 
 <script>
-const o = new IntersectionObserver(e => { e.forEach(el => { if (el.isIntersecting) { el.target.classList.add('visible'); o.unobserve(el.target); } }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade').forEach(el => o.observe(el));
-document.querySelectorAll('.nav-links a').forEach(a => { a.addEventListener('click', () => document.querySelector('nav').classList.remove('open')); });
+// Reveal animation - gracefully degrades if JS fails (content stays visible via CSS)
+if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('shown');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// Mobile nav
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.querySelector('nav').classList.remove('open'));
+});
 </script>
 
 </body>
