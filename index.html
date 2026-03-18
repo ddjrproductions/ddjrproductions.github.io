@@ -3,270 +3,177 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Derrick Downey Jr | Content Creator, Author, Entrepreneur</title>
-<meta name="description" content="Official site of Derrick Downey Jr — 2x Webby Award-winning content creator, #1 bestselling children's author of Hand and Paw, actor, and founder of DDJR Productions LLC.">
-<meta property="og:title" content="Derrick Downey Jr | DDJR Productions">
-<meta property="og:description" content="2x Webby Award winner. #1 Bestselling Author. Content Creator. Entrepreneur.">
+<title>DDJR Productions</title>
+<meta name="description" content="DDJR Productions LLC — stories that move people, inspire compassion, and make brands unforgettable. Founded by Derrick Downey Jr.">
+<meta property="og:title" content="DDJR Productions">
+<meta property="og:description" content="Stories that move people, inspire compassion, and make brands unforgettable.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ddjrproductions.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
 <style>
-/* ── RESET & BASE ──────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #f5f5f5; background: #0a0a0a; line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
+body { font-family: 'Inter', -apple-system, sans-serif; color: #1d1d1f; background: #fff; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
+.serif { font-family: 'EB Garamond', Georgia, serif; }
 
-/* ── NAV ───────────────────────────────────── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.nav-inner {
-  max-width: 1200px; margin: 0 auto; padding: 0 24px;
-  display: flex; align-items: center; justify-content: space-between; height: 64px;
-}
-.nav-logo { font-weight: 800; font-size: 1.1rem; letter-spacing: 1px; }
-.nav-logo span { color: #f5c518; }
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); }
+.nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.nav-logo { font-weight: 600; font-size: 0.88rem; letter-spacing: 0.5px; }
 .nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a {
-  font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px;
-  text-transform: uppercase; opacity: 0.7; transition: opacity 0.3s;
-}
-.nav-links a:hover { opacity: 1; }
-.nav-hamburger {
-  display: none; background: none; border: none; cursor: pointer; padding: 8px;
-}
-.nav-hamburger span {
-  display: block; width: 24px; height: 2px; background: #f5f5f5;
-  margin: 5px 0; transition: all 0.3s;
-}
+.nav-links a { font-size: 0.76rem; font-weight: 400; color: #86868b; transition: color 0.2s; }
+.nav-links a:hover { color: #1d1d1f; }
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-hamburger span { display: block; width: 18px; height: 1px; background: #1d1d1f; margin: 5px 0; }
 
-/* ── HERO ──────────────────────────────────── */
-.hero {
-  min-height: 100vh; display: flex; align-items: center; justify-content: center;
-  text-align: center; padding: 120px 24px 80px;
-  background: radial-gradient(ellipse at 50% 0%, rgba(245,197,24,0.08) 0%, transparent 60%);
-  position: relative; overflow: hidden;
-}
-.hero::before {
-  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-  background: radial-gradient(circle at 30% 50%, rgba(245,197,24,0.03) 0%, transparent 50%);
-  animation: drift 20s ease-in-out infinite alternate;
-}
-@keyframes drift { to { transform: translate(10%, -5%); } }
-.hero-content { position: relative; z-index: 1; max-width: 800px; }
-.hero-eyebrow {
-  display: inline-block; font-size: 0.8rem; font-weight: 600; letter-spacing: 3px;
-  text-transform: uppercase; color: #f5c518; margin-bottom: 24px;
-  padding: 6px 20px; border: 1px solid rgba(245,197,24,0.3); border-radius: 40px;
-}
-.hero h1 {
-  font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 800; line-height: 1.1; margin-bottom: 24px;
-}
-.hero h1 .accent { color: #f5c518; }
-.hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.2rem); opacity: 0.7; max-width: 600px;
-  margin: 0 auto 40px; line-height: 1.7;
-}
-.hero-stats {
-  display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin-top: 20px;
-}
-.stat { text-align: center; }
-.stat-number {
-  font-size: 2rem; font-weight: 800; color: #f5c518;
-  font-family: 'Playfair Display', serif;
-}
-.stat-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.5; margin-top: 4px; }
+/* HERO */
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 140px 32px 100px; position: relative; }
+.hero::after { content: ''; position: absolute; bottom: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, #d2d2d7, transparent); }
+.hero-inner { max-width: 760px; }
+.hero-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #86868b; margin-bottom: 32px; }
+.hero h1 { font-family: 'EB Garamond', Georgia, serif; font-size: clamp(2.6rem, 5.5vw, 4rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; color: #1d1d1f; margin-bottom: 28px; }
+.hero h1 em { font-style: italic; }
+.hero-intro { font-size: 0.95rem; font-weight: 300; color: #6e6e73; line-height: 1.8; max-width: 580px; margin: 0 auto 44px; }
+.hero-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; font-size: 0.8rem; font-weight: 500; transition: all 0.25s; cursor: pointer; border: none; letter-spacing: 0.2px; }
+.btn-dark { background: #1d1d1f; color: #fff; }
+.btn-dark:hover { background: #000; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.btn-light { background: transparent; color: #1d1d1f; border: 1px solid #d2d2d7; }
+.btn-light:hover { border-color: #1d1d1f; }
 
-/* ── SECTIONS ──────────────────────────────── */
-section { padding: 100px 24px; }
-.section-inner { max-width: 1100px; margin: 0 auto; }
-.section-label {
-  font-size: 0.75rem; font-weight: 600; letter-spacing: 3px;
-  text-transform: uppercase; color: #f5c518; margin-bottom: 12px;
-}
-.section-title {
-  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800; margin-bottom: 20px; line-height: 1.15;
-}
-.section-subtitle { font-size: 1.05rem; opacity: 0.6; max-width: 600px; margin-bottom: 48px; line-height: 1.7; }
+/* STATS */
+.stats { padding: 72px 32px; background: #fafafa; border-bottom: 1px solid #f0f0f0; }
+.stats-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+.stat-val { font-family: 'EB Garamond', Georgia, serif; font-size: 2rem; font-weight: 700; color: #1d1d1f; letter-spacing: -0.02em; }
+.stat-desc { font-size: 0.68rem; font-weight: 500; color: #86868b; margin-top: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
+.stat-divider { width: 1px; background: #e5e5e5; margin: 0 auto; height: 40px; align-self: center; }
 
-/* ── ABOUT ─────────────────────────────────── */
-.about { background: #0f0f0f; }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-.about-photo {
-  aspect-ratio: 4/5; background: linear-gradient(135deg, #1a1a1a, #222);
-  border-radius: 16px; display: flex; align-items: center; justify-content: center;
-  border: 1px solid rgba(255,255,255,0.06); position: relative; overflow: hidden;
-}
-.about-photo-placeholder {
-  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;
-  opacity: 0.3; text-align: center; padding: 20px;
-}
-.about-text p { margin-bottom: 20px; opacity: 0.75; line-height: 1.8; }
-.about-text .highlight { color: #f5c518; font-weight: 600; opacity: 1; }
+/* SECTIONS */
+section { padding: 120px 32px; }
+.section-inner { max-width: 1040px; margin: 0 auto; }
+.section-head { text-align: center; margin-bottom: 64px; }
+.label { font-size: 0.62rem; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #86868b; margin-bottom: 16px; }
+.section-head h2 { font-family: 'EB Garamond', Georgia, serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 500; letter-spacing: -0.01em; margin-bottom: 16px; line-height: 1.2; }
+.section-head p { font-size: 0.92rem; font-weight: 300; color: #86868b; max-width: 500px; margin: 0 auto; line-height: 1.75; }
 
-/* ── CREDENTIALS (Awards/Press) ────────────── */
-.credentials { background: #0a0a0a; }
-.cred-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-.cred-card {
-  background: #141414; border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px; padding: 36px; transition: border-color 0.3s, transform 0.3s;
-}
-.cred-card:hover { border-color: rgba(245,197,24,0.3); transform: translateY(-4px); }
-.cred-icon { font-size: 2rem; margin-bottom: 16px; }
-.cred-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
-.cred-card p { font-size: 0.9rem; opacity: 0.6; line-height: 1.6; }
+/* ABOUT */
+.about { background: #fff; position: relative; }
+.about::after { content: ''; position: absolute; bottom: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, #e5e5e5, transparent); }
+.about-content { max-width: 640px; margin: 0 auto; text-align: center; }
+.about-content p { font-size: 0.95rem; font-weight: 300; color: #6e6e73; line-height: 1.9; margin-bottom: 20px; }
+.about-content p:last-child { margin-bottom: 0; }
 
-/* ── BOOK ──────────────────────────────────── */
-.book { background: #0f0f0f; }
-.book-feature { display: grid; grid-template-columns: 380px 1fr; gap: 64px; align-items: center; }
-.book-cover {
-  aspect-ratio: 3/4; background: linear-gradient(135deg, #1a1a1a, #222);
-  border-radius: 12px; display: flex; align-items: center; justify-content: center;
-  border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-}
-.book-cover-placeholder {
-  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;
-  opacity: 0.3; text-align: center; padding: 20px;
-}
-.book-info h3 {
-  font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 800; margin-bottom: 8px;
-}
-.book-info .book-tag {
-  display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;
-  text-transform: uppercase; color: #0a0a0a; background: #f5c518;
-  padding: 4px 12px; border-radius: 4px; margin-bottom: 20px;
-}
-.book-info p { opacity: 0.7; line-height: 1.8; margin-bottom: 20px; }
-.book-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
-.btn {
-  display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px;
-  border-radius: 8px; font-size: 0.9rem; font-weight: 600;
-  transition: all 0.3s; cursor: pointer; border: none;
-}
-.btn-primary { background: #f5c518; color: #0a0a0a; }
-.btn-primary:hover { background: #ffd43b; transform: translateY(-2px); }
-.btn-outline { background: transparent; color: #f5f5f5; border: 1px solid rgba(255,255,255,0.2); }
-.btn-outline:hover { border-color: #f5c518; color: #f5c518; }
+/* FOUNDER */
+.founder { background: #fafafa; }
+.founder-layout { display: grid; grid-template-columns: 420px 1fr; gap: 72px; align-items: center; }
+.founder-photo { aspect-ratio: 3/4; background: #e8e8ed; border-radius: 24px; overflow: hidden; position: relative; }
+.founder-photo img { width: 100%; height: 100%; object-fit: cover; }
+.founder-photo-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; color: #aaa; }
+.founder-text .label { margin-bottom: 8px; }
+.founder-text h3 { font-family: 'EB Garamond', Georgia, serif; font-size: 2rem; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 24px; line-height: 1.2; }
+.founder-text p { font-size: 0.9rem; font-weight: 300; color: #6e6e73; line-height: 1.9; margin-bottom: 18px; }
+.founder-links { display: flex; gap: 10px; margin-top: 28px; }
 
-/* ── DUALSHOT ──────────────────────────────── */
-.dualshot { background: #0a0a0a; position: relative; overflow: hidden; }
-.dualshot::before {
-  content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%;
-  background: radial-gradient(ellipse at 80% 50%, rgba(245,197,24,0.04) 0%, transparent 60%);
-}
-.ds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; position: relative; z-index: 1; }
-.ds-mockup {
-  aspect-ratio: 9/16; max-width: 280px; margin: 0 auto;
-  background: linear-gradient(135deg, #1a1a1a, #222); border-radius: 32px;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-}
-.ds-mockup-placeholder {
-  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;
-  opacity: 0.3; text-align: center; padding: 20px;
-}
-.ds-features { list-style: none; margin: 24px 0; }
-.ds-features li {
-  padding: 12px 0; display: flex; align-items: flex-start; gap: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-}
-.ds-features li:last-child { border-bottom: none; }
-.ds-check { color: #f5c518; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
-.ds-features span { opacity: 0.75; font-size: 0.95rem; }
-.ds-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(245,197,24,0.1); border: 1px solid rgba(245,197,24,0.2);
-  padding: 8px 16px; border-radius: 8px; font-size: 0.8rem; font-weight: 600;
-  color: #f5c518; margin-top: 24px;
-}
+/* SERVICES */
+.services { background: #fff; position: relative; }
+.services::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, #e5e5e5, transparent); }
+.service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.service-card { padding: 44px 36px; border-radius: 20px; background: #fafafa; border: 1px solid transparent; transition: all 0.3s; }
+.service-card:hover { background: #f5f5f7; border-color: #e5e5e5; transform: translateY(-2px); }
+.service-num { font-family: 'EB Garamond', Georgia, serif; font-size: 1.6rem; font-weight: 500; color: #d2d2d7; margin-bottom: 16px; }
+.service-card h3 { font-size: 0.95rem; font-weight: 600; color: #1d1d1f; margin-bottom: 10px; }
+.service-card p { font-size: 0.85rem; font-weight: 300; color: #86868b; line-height: 1.75; }
 
-/* ── SOCIALS ───────────────────────────────── */
-.socials { background: #0f0f0f; text-align: center; }
-.social-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-.social-card {
-  background: #141414; border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px; padding: 32px 28px; min-width: 180px; flex: 1; max-width: 220px;
-  transition: border-color 0.3s, transform 0.3s; text-align: center;
-}
-.social-card:hover { border-color: rgba(245,197,24,0.3); transform: translateY(-4px); }
-.social-icon { font-size: 1.8rem; margin-bottom: 12px; }
-.social-card h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
-.social-card .social-handle { font-size: 0.8rem; opacity: 0.4; }
-.social-card .social-count { font-size: 0.85rem; color: #f5c518; font-weight: 600; margin-top: 8px; }
+/* HIGHLIGHTS */
+.highlights { background: #1d1d1f; color: #fff; }
+.highlights .label { color: #86868b; }
+.highlights .section-head h2 { color: #fff; }
+.hl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.hl-card { padding: 32px 28px; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); transition: all 0.3s; }
+.hl-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.1); }
+.hl-card h3 { font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 6px; }
+.hl-card p { font-size: 0.78rem; font-weight: 300; color: rgba(255,255,255,0.45); line-height: 1.65; }
 
-/* ── CONTACT / FOOTER ──────────────────────── */
-.contact { background: #0a0a0a; text-align: center; padding: 80px 24px; }
-.contact-emails { margin-top: 32px; }
-.contact-emails a {
-  display: inline-block; font-size: 1rem; font-weight: 500; margin: 8px 16px;
-  opacity: 0.6; transition: opacity 0.3s, color 0.3s;
-}
-.contact-emails a:hover { opacity: 1; color: #f5c518; }
+/* BOOK */
+.book { background: #fff; }
+.book-layout { display: grid; grid-template-columns: 300px 1fr; gap: 64px; align-items: center; }
+.book-cover { aspect-ratio: 3/4; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.06); position: relative; }
+.book-cover img { width: 100%; height: 100%; object-fit: cover; }
+.book-cover-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #e8e8ed; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; color: #aaa; }
+.book-badge { display: inline-block; font-size: 0.6rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; background: #1d1d1f; padding: 5px 14px; border-radius: 4px; margin-bottom: 18px; }
+.book-text h3 { font-family: 'EB Garamond', Georgia, serif; font-size: 1.8rem; font-weight: 500; margin-bottom: 6px; }
+.book-text .book-sub { font-family: 'EB Garamond', Georgia, serif; font-size: 1rem; font-style: italic; color: #86868b; margin-bottom: 20px; }
+.book-text p { font-size: 0.9rem; font-weight: 300; color: #6e6e73; line-height: 1.85; margin-bottom: 16px; }
+.book-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
 
-footer {
-  border-top: 1px solid rgba(255,255,255,0.06); padding: 32px 24px;
-  text-align: center;
-}
-.footer-inner { max-width: 1100px; margin: 0 auto; }
-.footer-links { margin-bottom: 12px; }
-.footer-links a { font-size: 0.8rem; opacity: 0.4; margin: 0 12px; transition: opacity 0.3s; }
-.footer-links a:hover { opacity: 0.8; }
-footer p { font-size: 0.75rem; opacity: 0.3; }
+/* COMING SOON */
+.coming-soon { background: #fafafa; text-align: center; position: relative; }
+.coming-soon::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, #e5e5e5, transparent); }
+.cs-box { max-width: 520px; margin: 0 auto; padding: 64px 48px; background: #fff; border-radius: 28px; border: 1px solid #e5e5e5; }
+.cs-box h3 { font-family: 'EB Garamond', Georgia, serif; font-size: 1.4rem; font-weight: 500; font-style: italic; margin-bottom: 16px; }
+.cs-box p { font-size: 0.9rem; font-weight: 300; color: #86868b; line-height: 1.75; }
+.cs-tag { display: inline-block; font-size: 0.58rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #86868b; margin-top: 28px; padding: 8px 20px; border: 1px solid #d2d2d7; border-radius: 980px; }
 
-/* ── MOBILE ────────────────────────────────── */
-@media (max-width: 768px) {
+/* SOCIALS */
+.socials { background: #fff; text-align: center; }
+.social-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.social-pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border: 1px solid #e5e5e5; border-radius: 980px; font-size: 0.78rem; font-weight: 500; color: #1d1d1f; transition: all 0.25s; }
+.social-pill:hover { background: #fafafa; border-color: #1d1d1f; transform: translateY(-1px); }
+.social-pill .ct { color: #86868b; font-weight: 400; font-size: 0.72rem; }
+
+/* CONTACT */
+.contact { background: #1d1d1f; text-align: center; padding: 120px 32px; position: relative; overflow: hidden; }
+.contact::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%); }
+.contact h2 { font-family: 'EB Garamond', Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 500; color: #fff; margin-bottom: 10px; position: relative; }
+.contact p { font-size: 0.85rem; font-weight: 300; color: #86868b; margin-bottom: 32px; position: relative; }
+.contact-link { display: inline-block; font-size: 0.88rem; font-weight: 400; color: #fff; padding: 14px 36px; border: 1px solid rgba(255,255,255,0.15); border-radius: 980px; transition: all 0.25s; position: relative; letter-spacing: 0.3px; }
+.contact-link:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.35); transform: translateY(-1px); }
+
+/* FOOTER */
+footer { background: #1d1d1f; padding: 28px 32px; text-align: center; border-top: 1px solid rgba(255,255,255,0.04); }
+.footer-links { margin-bottom: 10px; }
+.footer-links a { font-size: 0.7rem; color: #555; margin: 0 14px; transition: color 0.2s; }
+.footer-links a:hover { color: #999; }
+footer p { font-size: 0.65rem; color: #333; }
+
+/* MOBILE */
+@media (max-width: 860px) {
   .nav-links { display: none; }
   .nav-hamburger { display: block; }
-  nav.open .nav-links {
-    display: flex; flex-direction: column; position: absolute;
-    top: 64px; left: 0; right: 0; background: rgba(10,10,10,0.95);
-    backdrop-filter: blur(20px); padding: 24px; gap: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .hero-stats { gap: 24px; }
-  .stat-number { font-size: 1.5rem; }
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-photo { max-height: 400px; }
-  .book-feature { grid-template-columns: 1fr; gap: 40px; }
-  .book-cover { max-width: 280px; margin: 0 auto; }
-  .ds-grid { grid-template-columns: 1fr; gap: 40px; }
-  .ds-mockup { max-width: 220px; }
-  .social-card { min-width: 140px; }
+  nav.open .nav-links { display: flex; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); padding: 20px 32px; gap: 16px; border-bottom: 1px solid rgba(0,0,0,0.04); }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 36px 16px; }
+  .stat-divider { display: none; }
+  .service-grid { grid-template-columns: 1fr; }
+  .hl-grid { grid-template-columns: 1fr; }
+  .book-layout { grid-template-columns: 1fr; gap: 40px; }
+  .book-cover { max-width: 260px; margin: 0 auto; }
+  .founder-layout { grid-template-columns: 1fr; gap: 40px; }
+  .founder-photo { max-height: 420px; }
+  .cs-box { padding: 48px 28px; }
 }
 
-/* ── ANIMATIONS ────────────────────────────── */
-.fade-in {
-  opacity: 0; transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-in.visible { opacity: 1; transform: translateY(0); }
+/* FADE */
+.fade { opacity: 0; transform: translateY(16px); transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1); }
+.fade.visible { opacity: 1; transform: translateY(0); }
+.fade-delay-1 { transition-delay: 0.1s; }
+.fade-delay-2 { transition-delay: 0.2s; }
+.fade-delay-3 { transition-delay: 0.3s; }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="#" class="nav-logo">DDJR <span>Productions</span></a>
+    <a href="#" class="nav-logo">DDJR Productions</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#credentials">Awards</a></li>
+      <li><a href="#founder">Founder</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#highlights">Recognition</a></li>
       <li><a href="#book">Book</a></li>
-      <li><a href="#dualshot">DualShot</a></li>
-      <li><a href="#socials">Socials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="nav-hamburger" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Menu">
@@ -277,86 +184,123 @@ footer p { font-size: 0.75rem; opacity: 0.3; }
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-    <div class="hero-eyebrow">2x Webby Award Winner</div>
-    <h1>Derrick<br>Downey <span class="accent">Jr.</span></h1>
-    <p class="hero-subtitle">Content creator, #1 bestselling children's author, actor, entrepreneur, and the internet's favorite squirrel dad.</p>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-number">2M+</div>
-        <div class="stat-label">Instagram</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">1.4M+</div>
-        <div class="stat-label">TikTok</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">36M+</div>
-        <div class="stat-label">TikTok Likes</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">#1</div>
-        <div class="stat-label">Bestseller</div>
-      </div>
+  <div class="hero-inner">
+    <div class="hero-label">DDJR Productions LLC</div>
+    <h1>Stories that <em>move</em> people, inspire compassion, and make brands unforgettable.</h1>
+    <p class="hero-intro">DDJR Productions is the creative home of Derrick Downey Jr. — a multi-hyphenate creator, speaker, author, and wildlife storyteller known for building meaningful connection through digital storytelling, entertainment, and purpose-driven media.</p>
+    <div class="hero-btns">
+      <a href="#about" class="btn btn-dark">Explore Work</a>
+      <a href="#contact" class="btn btn-light">Let's Collaborate</a>
     </div>
   </div>
 </section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="fade">
+      <div class="stat-val">4M+</div>
+      <div class="stat-desc">Community Across Platforms</div>
+    </div>
+    <div class="fade fade-delay-1">
+      <div class="stat-val">Webby</div>
+      <div class="stat-desc">Award-Winning Creator</div>
+    </div>
+    <div class="fade fade-delay-2">
+      <div class="stat-val">#1</div>
+      <div class="stat-desc">Bestselling Children's Author</div>
+    </div>
+    <div class="fade fade-delay-3">
+      <div class="stat-val serif" style="font-style:italic;">Multi-Hyphenate</div>
+      <div class="stat-desc">Creator, Speaker, Storyteller</div>
+    </div>
+  </div>
+</div>
 
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-photo">
-        <div class="about-photo-placeholder">Your headshot<br>or brand photo here<br><br>(Replace this placeholder)</div>
+    <div class="section-head fade">
+      <div class="label">About</div>
+      <h2>A creative brand built on heart, humor,<br>and human connection.</h2>
+    </div>
+    <div class="about-content fade">
+      <p>DDJR Productions LLC develops content, campaigns, and experiences that live at the intersection of wildlife, wellness, lifestyle, culture, and storytelling. The brand is anchored by Derrick's unique voice, signature humor, and ability to turn small moments into unforgettable narratives.</p>
+      <p>Whether partnering with global brands, speaking to the next generation of creatives, or expanding original intellectual property, DDJR Productions focuses on one core idea: connection that feels real.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+  <div class="section-inner">
+    <div class="founder-layout">
+      <div class="founder-photo fade">
+        <span class="founder-photo-placeholder">Photo of Derrick</span>
       </div>
-      <div class="about-text fade-in">
-        <div class="section-label">About</div>
-        <div class="section-title">From Durham to the World</div>
-        <p>Born and raised between <span class="highlight">Durham and Charlotte, North Carolina</span>, Derrick Downey Jr. developed an early passion for performance and storytelling. What began as comedic and motivational posts on Instagram grew into a multi-platform career spanning content creation, acting, writing, and entrepreneurship.</p>
-        <p>In 2019, <span class="highlight">Oprah Winfrey</span> featured one of his parody videos, catapulting him into mainstream recognition. He went on to win <span class="highlight">two Webby Awards</span> for Best Short Form Video and Most Viral, and was invited to speak at <span class="highlight">USC's School of Dramatic Arts</span> about the art of going viral and new media performance.</p>
-        <p>In 2021, he starred in the film <span class="highlight">Million Dollar Debunk</span>, adding actor to an already stacked resume. Today, as the founder of <span class="highlight">DDJR Productions LLC</span>, Derrick balances being a full-time content creator, children's author, app developer, and animal advocate — all while maintaining genuine connections with millions of followers who know him as the Squirrel Dad.</p>
+      <div class="founder-text fade fade-delay-1">
+        <div class="label">Founder</div>
+        <h3>Derrick Downey Jr.</h3>
+        <p>Derrick Downey Jr. is a Webby Award-winning creator, storyteller, and entrepreneur best known for building a global community through his heartfelt and humorous wildlife content. With an audience of over 4 million across platforms, he has become a recognizable voice in digital storytelling, blending lifestyle, culture, and emotional connection into his work.</p>
+        <p>As the creative force behind DDJR Productions LLC, Derrick brings a founder-led perspective to every project — merging his on-camera presence, storytelling instincts, and audience trust with a production-driven approach. His work spans brand campaigns, original series, speaking engagements, and publishing, including his #1 bestselling children's book.</p>
+        <p>At the core of Derrick's work is a simple mission: to create stories that connect, uplift, and leave a lasting impact — whether through a single moment or a fully developed production.</p>
+        <div class="founder-links">
+          <a href="https://instagram.com/derrickdowneyjr" target="_blank" class="btn btn-light">Instagram</a>
+          <a href="https://tiktok.com/@derrickdowneyjr" target="_blank" class="btn btn-light">TikTok</a>
+          <a href="https://youtube.com/@derrickdowneyjr" target="_blank" class="btn btn-light">YouTube</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CREDENTIALS -->
-<section class="credentials" id="credentials">
+<!-- SERVICES -->
+<section class="services" id="services">
   <div class="section-inner">
-    <div class="section-label fade-in">Recognition</div>
-    <div class="section-title fade-in">Awards & Press</div>
-    <div class="section-subtitle fade-in">Highlights from the journey so far.</div>
-    <div class="cred-grid">
-      <div class="cred-card fade-in">
-        <div class="cred-icon">&#127942;</div>
-        <h3>Webby Award — Best Short Form Video</h3>
-        <p>People's Voice winner, recognized as one of the internet's best short-form video creators.</p>
+    <div class="section-head fade">
+      <div class="label">What We Do</div>
+      <h2>Creative Pillars</h2>
+      <p>Every project is designed to entertain, connect, and leave a lasting emotional impression.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card fade">
+        <div class="service-num">01</div>
+        <h3>Wildlife & Wellness Storytelling</h3>
+        <p>Heartfelt, entertaining storytelling rooted in compassion, healing, and the unexpected joy found in everyday moments with wildlife.</p>
       </div>
-      <div class="cred-card fade-in">
-        <div class="cred-icon">&#128293;</div>
-        <h3>Webby Award — Most Viral</h3>
-        <p>Honored for creating content that captured the internet's attention at scale.</p>
+      <div class="service-card fade fade-delay-1">
+        <div class="service-num">02</div>
+        <h3>Brand Partnerships</h3>
+        <p>Strategic campaigns that blend lifestyle, humor, and cinematic content across social platforms for brands that want memorable impact.</p>
       </div>
-      <div class="cred-card fade-in">
-        <div class="cred-icon">&#128250;</div>
-        <h3>Featured by Oprah Winfrey</h3>
-        <p>Oprah shared his parody video in 2019, bringing his comedy to a massive new audience.</p>
+      <div class="service-card fade fade-delay-2">
+        <div class="service-num">03</div>
+        <h3>Speaking & Media</h3>
+        <p>Live talks, panels, interviews, and media appearances centered on creativity, resilience, storytelling, and building community online.</p>
       </div>
-      <div class="cred-card fade-in">
-        <div class="cred-icon">&#127891;</div>
-        <h3>USC Speaker</h3>
-        <p>Invited to speak at the University of Southern California's School of Dramatic Arts on going viral and new media performance.</p>
+      <div class="service-card fade fade-delay-3">
+        <div class="service-num">04</div>
+        <h3>Original IP & Creative Ventures</h3>
+        <p>From children's books to digital series, products, and screen ideas — developing stories that connect across audiences and platforms.</p>
       </div>
-      <div class="cred-card fade-in">
-        <div class="cred-icon">&#127916;</div>
-        <h3>Million Dollar Debunk</h3>
-        <p>Starred in the 2021 film, expanding his creative reach from social media to the screen.</p>
-      </div>
-      <div class="cred-card fade-in">
-        <div class="cred-icon">&#128218;</div>
-        <h3>#1 Amazon Bestseller</h3>
-        <p>Hand and Paw: Maxine's Tale of Compassion hit #1 on Amazon, inspiring kids and families worldwide.</p>
-      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights" id="highlights">
+  <div class="section-inner">
+    <div class="section-head fade">
+      <div class="label">Recognition</div>
+      <h2 style="color:#fff;">Highlights</h2>
+    </div>
+    <div class="hl-grid">
+      <div class="hl-card fade"><h3>Webby Award — Best Short Form Video</h3><p>People's Voice winner for short-form video excellence.</p></div>
+      <div class="hl-card fade fade-delay-1"><h3>Webby Award — Most Viral</h3><p>Honored for content that captured the internet at scale.</p></div>
+      <div class="hl-card fade fade-delay-2"><h3>Featured by Oprah Winfrey</h3><p>Oprah shared Derrick's work to a global audience in 2019.</p></div>
+      <div class="hl-card fade"><h3>USC Speaker</h3><p>Invited to USC's School of Dramatic Arts on virality and new media.</p></div>
+      <div class="hl-card fade fade-delay-1"><h3>Million Dollar Debunk</h3><p>Feature film appearance, from digital to the screen.</p></div>
+      <div class="hl-card fade fade-delay-2"><h3>#1 Amazon Bestseller</h3><p>Hand and Paw reached the top of Amazon, inspiring families worldwide.</p></div>
     </div>
   </div>
 </section>
@@ -364,134 +308,87 @@ footer p { font-size: 0.75rem; opacity: 0.3; }
 <!-- BOOK -->
 <section class="book" id="book">
   <div class="section-inner">
-    <div class="section-label fade-in">Published Work</div>
-    <div class="section-title fade-in">Hand and Paw</div>
-    <div class="section-subtitle fade-in">A #1 Amazon bestselling children's book about compassion, nature, and an unlikely friendship.</div>
-    <div class="book-feature fade-in">
+    <div class="section-head fade">
+      <div class="label">Publishing</div>
+      <h2>Hand and Paw</h2>
+    </div>
+    <div class="book-layout fade">
       <div class="book-cover">
-        <div class="book-cover-placeholder">Book cover image here<br><br>(Replace this placeholder)</div>
+        <img src="book-cover.png" alt="Hand and Paw — Maxine's Tale of Compassion by Derrick Downey Jr">
       </div>
-      <div class="book-info">
-        <div class="book-tag">#1 Amazon Bestseller</div>
-        <h3>Maxine's Tale of Compassion</h3>
-        <p>Inspired by a true story. When a tree was chopped down in Derrick's neighborhood, it turned out that a squirrel named Maxine had her nest and babies inside. Derrick rescued them, beginning a friendship that would inspire millions of followers and eventually become a children's book.</p>
-        <p>With beautiful illustrations and touching rhymes, Hand and Paw teaches kids the value of compassion, caring for animals, and appreciating the wonders of the natural world.</p>
-        <p>Available in hardcover, paperback, and audiobook — narrated by Derrick himself alongside Sydney Jay.</p>
-        <div class="book-links">
-          <a href="https://www.amazon.com/Hand-Paw-Maxines-Tale-Compassion/dp/B0CR6YF9Y9" target="_blank" class="btn btn-primary">Get on Amazon</a>
-          <a href="https://www.barnesandnoble.com/w/hand-and-paw-derrick-downey/1144939768" target="_blank" class="btn btn-outline">Barnes & Noble</a>
-          <a href="https://www.audible.com/pd/Hand-and-Paw-Audiobook/B0CW248ZT7" target="_blank" class="btn btn-outline">Audiobook</a>
+      <div class="book-text">
+        <div class="book-badge">#1 Amazon Bestseller</div>
+        <h3>Hand and Paw</h3>
+        <div class="book-sub">Maxine's Tale of Compassion</div>
+        <p>Inspired by a true story of rescue and friendship. When a tree came down and left a squirrel family displaced, what followed was a bond that inspired millions — and eventually became a book teaching children the value of compassion.</p>
+        <p>Available in hardcover, paperback, and audiobook.</p>
+        <div class="book-actions">
+          <a href="https://www.amazon.com/Hand-Paw-Maxines-Tale-Compassion/dp/B0CR6YF9Y9" target="_blank" class="btn btn-dark">Amazon</a>
+          <a href="https://www.barnesandnoble.com/w/hand-and-paw-derrick-downey/1144939768" target="_blank" class="btn btn-light">Barnes & Noble</a>
+          <a href="https://www.audible.com/pd/Hand-and-Paw-Audiobook/B0CW248ZT7" target="_blank" class="btn btn-light">Audiobook</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DUALSHOT -->
-<section class="dualshot" id="dualshot">
+<!-- COMING SOON -->
+<section class="coming-soon" id="new-project">
   <div class="section-inner">
-    <div class="ds-grid">
-      <div class="fade-in">
-        <div class="section-label">App</div>
-        <div class="section-title">DualShot</div>
-        <p class="section-subtitle" style="margin-bottom:24px;">Record two videos at once. DualShot captures simultaneous portrait and landscape footage from your iPhone's dual cameras in a single take.</p>
-        <ul class="ds-features">
-          <li><span class="ds-check">&#10003;</span><span>Simultaneous dual-lens recording — wide + ultra-wide or telephoto</span></li>
-          <li><span class="ds-check">&#10003;</span><span>4K and 1080p at 24, 30, or 60 fps</span></li>
-          <li><span class="ds-check">&#10003;</span><span>Portrait (9:16) + Landscape (16:9) output from one take</span></li>
-          <li><span class="ds-check">&#10003;</span><span>Single-lens mode with front/back camera switching</span></li>
-          <li><span class="ds-check">&#10003;</span><span>MOV and MP4 export formats</span></li>
-          <li><span class="ds-check">&#10003;</span><span>Built by a content creator, for content creators</span></li>
-        </ul>
-        <a href="#" class="btn btn-primary" id="appstore-btn">Coming Soon to the App Store</a>
-        <div class="ds-badge">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L10.2 5.4L15 6.2L11.5 9.6L12.4 14.4L8 12.1L3.6 14.4L4.5 9.6L1 6.2L5.8 5.4L8 1Z" fill="#f5c518"/></svg>
-          Built by DDJR Productions LLC
-        </div>
-      </div>
-      <div class="fade-in">
-        <div class="ds-mockup">
-          <div class="ds-mockup-placeholder">App screenshot<br>here<br><br>(Replace this placeholder)</div>
-        </div>
-      </div>
+    <div class="section-head fade">
+      <div class="label">New Venture</div>
+      <h2>Something New</h2>
+    </div>
+    <div class="cs-box fade">
+      <h3>Built for creators, by a creator.</h3>
+      <p>We're building something we wish existed — a tool born from real shoots, real deadlines, and real frustration with the way things currently work.</p>
+      <p style="margin-top:14px;">Details soon.</p>
+      <div class="cs-tag">Coming Soon</div>
     </div>
   </div>
 </section>
 
 <!-- SOCIALS -->
-<section class="socials" id="socials">
+<section class="socials">
   <div class="section-inner">
-    <div class="section-label fade-in">Connect</div>
-    <div class="section-title fade-in" style="text-align:center;">Follow the Journey</div>
-    <div class="section-subtitle fade-in" style="margin:0 auto 48px;text-align:center;">Squirrel content, comedy, behind the scenes, and more.</div>
-    <div class="social-grid">
-      <a href="https://instagram.com/derrickdowneyjr" target="_blank" class="social-card fade-in">
-        <div class="social-icon">&#128247;</div>
-        <h4>Instagram</h4>
-        <div class="social-handle">@derrickdowneyjr</div>
-        <div class="social-count">2M+ Followers</div>
-      </a>
-      <a href="https://tiktok.com/@derrickdowneyjr" target="_blank" class="social-card fade-in">
-        <div class="social-icon">&#9835;</div>
-        <h4>TikTok</h4>
-        <div class="social-handle">@derrickdowneyjr</div>
-        <div class="social-count">1.4M+ Followers</div>
-      </a>
-      <a href="https://youtube.com/@derrickdowneyjr" target="_blank" class="social-card fade-in">
-        <div class="social-icon">&#9654;</div>
-        <h4>YouTube</h4>
-        <div class="social-handle">@derrickdowneyjr</div>
-      </a>
-      <a href="https://facebook.com/DerrickDowneyJr" target="_blank" class="social-card fade-in">
-        <div class="social-icon">&#128077;</div>
-        <h4>Facebook</h4>
-        <div class="social-handle">@DerrickDowneyJr</div>
-        <div class="social-count">687K+ Likes</div>
-      </a>
-      <a href="https://threads.net/@derrickdowneyjr" target="_blank" class="social-card fade-in">
-        <div class="social-icon">&#64;</div>
-        <h4>Threads</h4>
-        <div class="social-handle">@derrickdowneyjr</div>
-      </a>
+    <div class="section-head fade">
+      <div class="label">Connect</div>
+      <h2>Follow Along</h2>
+    </div>
+    <div class="social-row fade">
+      <a href="https://instagram.com/derrickdowneyjr" target="_blank" class="social-pill">Instagram <span class="ct">2M+</span></a>
+      <a href="https://tiktok.com/@derrickdowneyjr" target="_blank" class="social-pill">TikTok <span class="ct">1.4M+</span></a>
+      <a href="https://youtube.com/@derrickdowneyjr" target="_blank" class="social-pill">YouTube</a>
+      <a href="https://facebook.com/DerrickDowneyJr" target="_blank" class="social-pill">Facebook <span class="ct">687K+</span></a>
+      <a href="https://threads.net/@derrickdowneyjr" target="_blank" class="social-pill">Threads</a>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
-  <div class="section-inner">
-    <div class="section-label fade-in">Get in Touch</div>
-    <div class="section-title fade-in" style="text-align:center;">Let's Work Together</div>
-    <div class="contact-emails fade-in">
-      <a href="mailto:collab@ddjrproductions.com">collab@ddjrproductions.com</a>
-      <a href="mailto:derrick@ddjrproductions.com">derrick@ddjrproductions.com</a>
-    </div>
-  </div>
+  <h2>Let's work together.</h2>
+  <p>Collaborations, partnerships, and business inquiries.</p>
+  <a href="mailto:collab@ddjrproductions.com" class="contact-link">collab@ddjrproductions.com</a>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-links">
-      <a href="dualshot/privacy/">Privacy Policy</a>
       <a href="#about">About</a>
+      <a href="#founder">Founder</a>
+      <a href="#services">Services</a>
+      <a href="dualshot/privacy/">Privacy Policy</a>
       <a href="#contact">Contact</a>
     </div>
     <p>&copy; 2026 DDJR Productions LLC. All rights reserved.</p>
   </div>
 </footer>
 
-<!-- SCROLL ANIMATION -->
 <script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// Close mobile nav on link click
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => document.querySelector('nav').classList.remove('open'));
-});
+const o = new IntersectionObserver(e => { e.forEach(el => { if (el.isIntersecting) { el.target.classList.add('visible'); o.unobserve(el.target); } }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade').forEach(el => o.observe(el));
+document.querySelectorAll('.nav-links a').forEach(a => { a.addEventListener('click', () => document.querySelector('nav').classList.remove('open')); });
 </script>
 
 </body>
