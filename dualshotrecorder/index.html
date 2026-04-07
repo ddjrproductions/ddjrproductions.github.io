@@ -19,22 +19,26 @@
     <meta name="twitter:title" content="DualShot Recorder App by Derrick Downey Jr — Portrait + Landscape. One Take.">
     <meta name="twitter:description" content="Record vertical and horizontal video simultaneously. The original dual-format recorder by DDJR Productions.">
 
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code (consent-gated — loads only after user accepts cookies) -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1430059178864393');
-    fbq('track', 'PageView');
+    function loadMetaPixel() {
+        if (window.fbq) return;
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1430059178864393');
+        fbq('track', 'PageView');
+    }
+    // Auto-load if user previously consented
+    if (localStorage.getItem('cookie_consent') === 'accepted') {
+        loadMetaPixel();
+    }
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1430059178864393&ev=PageView&noscript=1"
-    /></noscript>
     <!-- End Meta Pixel Code -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1054,12 +1058,94 @@ function switchReviewView(view) {
         <div class="footer-links">
             <a href="https://ddjrproductions.com">DDJR Productions</a>
             <a href="https://apps.apple.com/us/app/dualshot-recorder/id6761159805" target="_blank" rel="noopener">App Store</a>
-            <a href="https://ddjrproductions.com/dualshot/privacy/">Privacy Policy</a>
+            <a href="https://ddjrproductions.com/privacy/">Privacy Policy</a>
             <a href="https://www.instagram.com/derrickdowneyjr/" target="_blank" rel="noopener">Instagram</a>
             <a href="https://www.threads.net/@derrickdowneyjr" target="_blank" rel="noopener">Threads</a>
         </div>
     </div>
 </footer>
+
+<!-- Cookie Consent Banner -->
+<style>
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #1a1928;
+        border-top: 1px solid var(--border);
+        padding: 14px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        z-index: 9999;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+    }
+    .cookie-banner.visible { transform: translateY(0); }
+    .cookie-banner p { margin: 0; line-height: 1.4; }
+    .cookie-banner a { color: var(--accent); }
+    .cookie-btn {
+        padding: 8px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        cursor: pointer;
+        white-space: nowrap;
+        font-family: inherit;
+    }
+    .cookie-btn-accept {
+        background: var(--accent);
+        color: #fff;
+    }
+    .cookie-btn-accept:hover { background: #7c4fe0; }
+    .cookie-btn-decline {
+        background: transparent;
+        color: var(--text-muted);
+        border: 1px solid var(--border);
+    }
+    .cookie-btn-decline:hover { color: var(--text-primary); border-color: var(--text-muted); }
+    @media (max-width: 600px) {
+        .cookie-banner {
+            flex-direction: column;
+            text-align: center;
+            gap: 12px;
+            padding: 16px 20px;
+        }
+    }
+</style>
+
+<div class="cookie-banner" id="cookieBanner">
+    <p>We use cookies to measure ad performance via the Meta Pixel. <a href="https://ddjrproductions.com/privacy/">Learn more</a></p>
+    <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">Decline</button>
+</div>
+
+<script>
+(function() {
+    var consent = localStorage.getItem('cookie_consent');
+    if (!consent) {
+        setTimeout(function() {
+            document.getElementById('cookieBanner').classList.add('visible');
+        }, 800);
+    }
+})();
+
+function acceptCookies() {
+    localStorage.setItem('cookie_consent', 'accepted');
+    document.getElementById('cookieBanner').classList.remove('visible');
+    loadMetaPixel();
+}
+
+function declineCookies() {
+    localStorage.setItem('cookie_consent', 'declined');
+    document.getElementById('cookieBanner').classList.remove('visible');
+}
+</script>
 
 </body>
 </html>
