@@ -1035,6 +1035,92 @@ function switchReviewView(view) {
 </section>
 
 <!-- CTA -->
+<!-- ANDROID WAITLIST -->
+<section id="android" style="border-top: 1px solid var(--border); padding: 80px 0;">
+    <div class="container" style="max-width: 620px; text-align: center;">
+        <div class="section-label" style="display: inline-flex; align-items: center; gap: 8px;">
+            <span style="width:7px;height:7px;border-radius:50%;background:#22c55e;display:inline-block;"></span>
+            Coming to Android
+        </div>
+        <div class="section-title">DualShot Recorder<br><span style="background:var(--gradient-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Coming to Android.</span></div>
+        <div class="section-desc" style="max-width:420px;margin:0 auto 2.5rem;">The #1 iOS app is heading to Android. Be the first to know when it drops — no spam, just the launch.</div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2.5rem 2rem 2rem;position:relative;overflow:hidden;text-align:left;">
+            <div style="position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:300px;height:120px;background:radial-gradient(ellipse,rgba(139,92,246,0.18) 0%,transparent 70%);pointer-events:none;"></div>
+            <form id="waitlist-form" novalidate>
+                <div style="margin-bottom:1.25rem;">
+                    <label for="wl-fname" style="display:block;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.45rem;">First Name</label>
+                    <input type="text" id="wl-fname" name="FNAME" placeholder="Your first name" autocomplete="given-name" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:10px;padding:0.8rem 1rem;font-family:inherit;font-size:0.95rem;color:var(--text-primary);outline:none;transition:border-color 0.2s,background 0.2s;"/>
+                </div>
+                <div style="margin-bottom:1.25rem;">
+                    <label for="wl-email" style="display:block;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.45rem;">Email Address</label>
+                    <input type="email" id="wl-email" name="EMAIL" placeholder="your@email.com" required autocomplete="email" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:10px;padding:0.8rem 1rem;font-family:inherit;font-size:0.95rem;color:var(--text-primary);outline:none;transition:border-color 0.2s,background 0.2s;"/>
+                    <p id="wl-email-err" style="display:none;color:#f87171;font-size:0.72rem;margin-top:0.35rem;font-weight:600;">Please enter a valid email address.</p>
+                </div>
+                <!-- Mailchimp honeypot -->
+                <div style="position:absolute;left:-9999px;opacity:0;" aria-hidden="true">
+                    <input type="text" name="b_65a76787f4ecd3635d1878d63_e309a05efd" tabindex="-1" value=""/>
+                </div>
+                <button type="submit" id="wl-submit" style="display:block;width:100%;margin-top:1.5rem;padding:0.9rem 2rem;background:var(--gradient-accent);color:#fff;font-family:inherit;font-size:0.85rem;font-weight:800;letter-spacing:0.04em;border:none;border-radius:10px;cursor:pointer;transition:opacity 0.2s,transform 0.15s;position:relative;overflow:hidden;">
+                    Notify Me When It Drops →
+                </button>
+                <div id="wl-success" style="display:none;padding:1.5rem 0 0.5rem;text-align:center;">
+                    <div style="font-size:2rem;margin-bottom:0.5rem;">✦</div>
+                    <p style="font-size:1.4rem;font-weight:800;background:var(--gradient-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">You're on the list.</p>
+                    <small style="display:block;margin-top:0.4rem;font-size:0.75rem;color:var(--text-secondary);">We'll reach out the moment DualShot hits Android.</small>
+                </div>
+                <p style="margin-top:1.25rem;font-size:0.68rem;color:var(--text-muted);text-align:center;font-weight:600;letter-spacing:0.04em;">No spam. Unsubscribe anytime.</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+(function() {
+    var MC_URL = 'https://ddjrproductions.us7.list-manage.com/subscribe/post-json?u=65a76787f4ecd3635d1878d63&id=e309a05efd&f_id=001e43e1f0';
+    document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var emailEl  = document.getElementById('wl-email');
+        var fnameEl  = document.getElementById('wl-fname');
+        var emailErr = document.getElementById('wl-email-err');
+        var btn      = document.getElementById('wl-submit');
+        var success  = document.getElementById('wl-success');
+        var emailVal = emailEl.value.trim();
+        var valid    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+        emailErr.style.display = valid ? 'none' : 'block';
+        if (!valid) { emailEl.focus(); return; }
+        btn.textContent = 'Submitting…';
+        btn.disabled    = true;
+        btn.style.opacity = '0.5';
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'Lead', {}, { em: emailVal.toLowerCase() });
+        }
+        var params = new URLSearchParams({
+            EMAIL: emailVal,
+            FNAME: fnameEl.value.trim(),
+            'b_65a76787f4ecd3635d1878d63_e309a05efd': ''
+        });
+        window._mcWlCb = function() {
+            btn.style.display     = 'none';
+            success.style.display = 'block';
+        };
+        var s   = document.createElement('script');
+        s.src   = MC_URL + '&' + params.toString() + '&c=_mcWlCb';
+        s.onerror = window._mcWlCb;
+        document.body.appendChild(s);
+        setTimeout(function() {
+            if (success.style.display !== 'block') window._mcWlCb();
+        }, 5000);
+    });
+
+    // Focus styles for waitlist inputs
+    var wlInputs = document.querySelectorAll('#waitlist-form input[type="text"], #waitlist-form input[type="email"]');
+    wlInputs.forEach(function(inp) {
+        inp.addEventListener('focus', function() { this.style.borderColor = 'rgba(139,92,246,0.6)'; this.style.background = 'rgba(139,92,246,0.07)'; });
+        inp.addEventListener('blur', function() { this.style.borderColor = ''; this.style.background = ''; });
+    });
+})();
+</script>
+
 <section class="cta-section">
     <div class="container" style="position: relative; z-index: 1;">
         <div class="section-label">Get DualShot Recorder</div>
