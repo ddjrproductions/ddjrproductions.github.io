@@ -43,10 +43,20 @@
             color: var(--text-muted);
         }
         .back-link:hover { color: var(--text-primary); text-decoration: none; }
+        .brand {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
         h1 {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 8px;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
         }
         .last-updated {
             font-size: 0.85rem;
@@ -58,6 +68,13 @@
             font-weight: 600;
             margin-top: 40px;
             margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-top: 28px;
+            margin-bottom: 10px;
             color: var(--text-primary);
         }
         p, li {
@@ -75,6 +92,10 @@
             border-top: 1px solid var(--border);
             margin: 48px 0;
         }
+        .contact-email {
+            font-weight: 600;
+            font-style: italic;
+        }
         footer {
             text-align: center;
             padding: 40px 24px;
@@ -89,50 +110,73 @@
 <body>
 
 <div class="container">
-    <a href="https://ddjrproductions.com" class="back-link">&larr; Back to DDJR Productions</a>
+    <a href="https://ddjrproductions.com" class="back-link">&larr; Back to Home</a>
 
-    <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: April 7, 2026</p>
+    <p class="brand">DDJR Productions</p>
+    <h1>DDJR Productions &amp; DualShot Recorder</h1>
+    <p class="subtitle">Privacy Policy</p>
+    <p class="last-updated">Last updated: April 17, 2026</p>
 
-    <p>DDJR Productions LLC ("we," "us," or "our") operates the website ddjrproductions.com and the DualShot Recorder mobile application. This Privacy Policy explains how we collect, use, and protect information when you visit our websites or use our app.</p>
+    <p>DDJR Productions LLC ("we," "us," or "our") operates the website ddjrproductions.com and the DualShot Recorder mobile application. This Privacy Policy explains how we collect, use, and protect information when you visit our website or use our app.</p>
 
     <h2>1. DualShot Recorder App</h2>
-    <p>DualShot Recorder is designed with privacy in mind. The app records video locally on your device. We do not collect, transmit, or store any personal data, video content, or usage analytics from the app. All recordings remain entirely on your iPhone.</p>
+    <p>DualShot Recorder is designed with privacy as a core principle. The app records video locally on your device, and all recordings remain entirely on your iPhone. We do not collect, transmit, or store your video content, audio, recording history, or general usage analytics.</p>
+    <p>The sections below describe the limited, specific data interactions the app relies on in order to function.</p>
+
+    <h3>1a. Subscriptions and In-App Purchases</h3>
+    <p>As of version 3.0, DualShot Recorder offers optional paid subscription tiers (Basic and Advanced) alongside a free tier. Purchases are processed entirely through Apple's App Store using Apple's StoreKit framework. We never see your payment information.</p>
+    <p>When you subscribe, restore purchases, or launch the app, the following flows occur:</p>
+    <ul>
+        <li>The app communicates with Apple's App Store to fetch product information, validate entitlements, and confirm active subscriptions. These communications are handled by Apple under Apple's privacy terms, which you can review at <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener">apple.com/privacy</a>.</li>
+        <li>Apple provides us with aggregated, non-identifying sales and subscription reports through App Store Connect. We use these reports only to understand overall product performance.</li>
+        <li>If you originally purchased DualShot Recorder prior to version 3.0, the app uses Apple's AppTransaction API to verify your original purchase so that you can be automatically granted lifetime access to Advanced features ("grandfathered" status). This verification happens locally and through Apple's App Store; no external servers operated by us are involved.</li>
+    </ul>
+
+    <h3>1b. iCloud Synchronization</h3>
+    <p>If you are a grandfathered legacy user, the app writes a single non-personal flag indicating your legacy-access status to your personal iCloud Key-Value Store. This flag exists only so that your grandfathered access follows you across your own Apple devices (for example, when you install DualShot Recorder on a new iPhone).</p>
+    <p>This flag is stored in your iCloud account, controlled by you, and visible only to the DualShot Recorder app on your own devices. We cannot read your iCloud data and do not interact with any other part of it. You can clear this flag at any time by deleting the app or signing out of iCloud for DualShot Recorder in your device settings.</p>
+
+    <h3>1c. Local Settings and Preferences</h3>
+    <p>DualShot Recorder stores your app settings &mdash; such as resolution, frame rate, file format, camera assignment, onboarding status, and subscription entitlement cache &mdash; locally on your device using Apple's standard UserDefaults storage. These preferences never leave your device.</p>
+
+    <h3>1d. On-Device Diagnostics</h3>
+    <p>To help us resolve support requests, the app maintains a small, session-only in-memory log of recent subscription-verification attempts (for example, whether an entitlement check succeeded or encountered a network error). This log is kept in the device's RAM only &mdash; never written to disk, never uploaded &mdash; and is wiped every time the app is closed.</p>
+    <p>If you open a support request by tapping Settings &rarr; Copy Diagnostics, the app assembles a plain-text summary of this log along with your build version, iOS version, locale, and current subscription tier, and places it on your device's clipboard. This text leaves your device only if you choose to paste it into an email, message, or document yourself. We never receive it automatically.</p>
+
+    <h3>1e. Camera, Microphone, and Photos Access</h3>
+    <p>DualShot Recorder requires access to your device's cameras, microphone, and Photos library solely to perform its core function: recording dual-lens video and saving the resulting files to your device. This data is processed entirely on your device and is never sent to any server or third party.</p>
+
+    <h3>1f. Disk Space Access</h3>
+    <p>DualShot Recorder checks your device's available storage before and during recording to prevent data loss from insufficient space. This information is used solely for the in-app storage indicator and is never transmitted or stored externally.</p>
 
     <h2>2. Website Analytics &amp; Meta Pixel</h2>
-    <p>Our website at ddjrproductions.com uses the Meta Pixel (formerly Facebook Pixel), a tracking technology provided by Meta Platforms, Inc. The Meta Pixel collects anonymous browsing data when you visit our site, including pages viewed, referring URLs, and general device information.</p>
-    <p>This data is used for:</p>
-    <ul>
-        <li>Measuring the effectiveness of our advertising campaigns</li>
-        <li>Retargeting visitors with relevant ads on Facebook and Instagram</li>
-        <li>Understanding how visitors interact with our website</li>
-    </ul>
-    <p>The Meta Pixel only loads after you provide consent via our cookie banner. If you decline, no tracking data is collected.</p>
+    <p>Our website at ddjrproductions.com uses the Meta Pixel (formerly Facebook Pixel), a tracking technology provided by Meta Platforms, Inc. The Meta Pixel collects anonymous browsing data when you visit our site, including pages viewed, referring URLs, and general device information. This data is used for measuring the effectiveness of our advertising campaigns, retargeting visitors with relevant ads on Facebook and Instagram, and understanding how visitors interact with our website.</p>
+    <p>The Meta Pixel only loads after you provide consent via our cookie banner. If you decline, no tracking data is collected. The Meta Pixel is not present in the DualShot Recorder mobile app. It is used only on our website.</p>
 
     <h2>3. Cookies</h2>
-    <p>Our website uses cookies for the following purposes:</p>
+    <p>Our website uses:</p>
     <ul>
-        <li><strong>Essential cookies:</strong> Used to remember your cookie consent preference. These are necessary for the site to function properly.</li>
+        <li><strong>Essential cookies:</strong> Used to remember your cookie consent preference.</li>
         <li><strong>Advertising cookies:</strong> Set by the Meta Pixel (with your consent) to enable ad targeting and measurement across Meta platforms.</li>
     </ul>
     <p>You can manage or delete cookies at any time through your browser settings.</p>
 
     <h2>4. Your Choices &amp; Opt-Out Rights</h2>
-    <p>You have several options to control how your data is used:</p>
     <ul>
-        <li><strong>Cookie consent:</strong> You can accept or decline non-essential cookies when you first visit our site. You can change your preference at any time by clearing your browser cookies and revisiting the site.</li>
-        <li><strong>Meta ad settings:</strong> You can opt out of interest-based advertising from Meta by visiting <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener">Facebook Ad Preferences</a>.</li>
-        <li><strong>Industry opt-out:</strong> You can opt out of interest-based advertising from participating companies at <a href="https://optout.aboutads.info" target="_blank" rel="noopener">optout.aboutads.info</a>.</li>
+        <li>You can accept or decline non-essential cookies when you first visit our site, and change your preference at any time by clearing your browser cookies and revisiting the site.</li>
+        <li>You can opt out of interest-based advertising from Meta by visiting <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener">Facebook Ad Preferences</a>, or from participating companies at <a href="https://optout.aboutads.info" target="_blank" rel="noopener">optout.aboutads.info</a>.</li>
+        <li>You can cancel subscriptions, request refunds, and manage purchase data directly through your Apple ID and App Store settings.</li>
+        <li>You can remove the iCloud legacy-access flag by signing out of iCloud for DualShot Recorder in your iOS settings or by deleting the app.</li>
     </ul>
 
     <h2>5. GDPR (European Users)</h2>
-    <p>If you are located in the European Economic Area (EEA), we process your data based on your explicit consent. You have the right to access, correct, delete, or restrict the processing of your personal data. The Meta Pixel will not be activated unless you provide consent through our cookie banner.</p>
+    <p>If you are located in the European Economic Area (EEA), we process your data based on your explicit consent. You have the right to access, correct, delete, or restrict the processing of your personal data. The Meta Pixel will not be activated unless you provide consent through our cookie banner. Subscription data processed by Apple on our behalf is governed by Apple's own privacy terms; you may request Apple-provided transaction records directly from Apple.</p>
 
     <h2>6. CCPA (California Users)</h2>
     <p>If you are a California resident, you have the right to know what personal information is collected about you, request deletion of your data, and opt out of the sale of personal information. We do not sell personal information. To exercise your rights, contact us at the email below.</p>
 
     <h2>7. Third-Party Services</h2>
-    <p>Our website may contain links to third-party websites such as the Apple App Store, Instagram, and Threads. We are not responsible for the privacy practices of these external sites. We encourage you to review their privacy policies.</p>
+    <p>Our website may contain links to third-party websites such as the Apple App Store, Instagram, and Threads. We are not responsible for the privacy practices of these external sites. The DualShot Recorder app relies on Apple's App Store and StoreKit services for subscription processing, purchase verification, and, where applicable, iCloud synchronization. Apple's handling of this data is governed by Apple's own privacy policy, which you can review at <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener">apple.com/privacy</a>.</p>
 
     <h2>8. Children's Privacy</h2>
     <p>Our services are not directed to children under the age of 13. We do not knowingly collect personal information from children.</p>
@@ -142,7 +186,7 @@
 
     <h2>10. Contact Us</h2>
     <p>If you have questions about this Privacy Policy or wish to exercise your data rights, contact us at:</p>
-    <p><a href="mailto:dualshotrecorder@ddjrproductions.com">dualshotrecorder@ddjrproductions.com</a></p>
+    <p>DDJR Productions LLC<br>Email: <a href="mailto:dualshotrecorder@ddjrproductions.com" class="contact-email">dualshotrecorder@ddjrproductions.com</a></p>
 </div>
 
 <footer>
